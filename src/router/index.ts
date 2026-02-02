@@ -4,6 +4,8 @@ import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import LoginView from '@/views/auth/LoginView.vue'
 import RegisterView from '@/views/auth/RegisterView.vue'
 import PerfilView from '@/views/dashboard/PerfilView.vue'
+import TaskRegisterView from '@/views/dashboard/TaskRegisterView.vue'
+import TaskEditView from '@/views/dashboard/TaskeditView.vue'
 import TaskView from '@/views/dashboard/TaskView.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
@@ -38,10 +40,21 @@ const routes: RouteRecordRaw[] = [
         name: 'profile',
         component: PerfilView,
       },
-       {
+      {
         path: 'tasks',
         name: 'tasks',
         component: TaskView,
+      },
+      {
+        path: 'tasks/new',
+        name: 'taskregister',
+        component: TaskRegisterView,
+      },
+      {
+        path: 'tasks/edit/:id',
+        name: 'taskedit',
+        component: TaskEditView,
+        props: true,
       },
     ],
   },
